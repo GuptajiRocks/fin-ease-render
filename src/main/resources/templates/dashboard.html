@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+<div class="flex min-h-screen">
+    <div class="w-64 bg-indigo-600 text-white px-4 py-6 flex flex-col justify-between">
+        <a href="#" class="text-xl font-bold mb-6">My Dashboard</a>
+        <ul class="space-y-2">
+            <li><a href="/dashboard/main" class="hover:text-indigo-700">Overview</a></li>
+            <li><a href="/dashboard/analytics" class="hover:text-indigo-700">Portfolio Analytics</a></li>
+            <li><a href="/dashboard/analytics2" class="hover:text-indigo-700">Market Analytics</a></li>
+            <li><a href="/news" class="hover:text-indigo-700">News</a></li>
+        </ul>
+        <div class="flex items-center mt-auto">
+            <img src="profilenew.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full mr-2">
+            <p class="text-sm">Arihant Gupta</p>
+        </div>
+    </div>
+
+    <div class="flex-grow bg-white p-6 overflow-auto">
+        <h2 class="text-2xl font-bold mb-4">Welcome back, Arihant</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-gray-200 rounded-lg shadow-md p-4">
+                <h3 class="text-lg font-bold mb-2">Recent Activity</h3>
+                <ul class="space-y-2">
+                    <li>New user signed up!</li>
+                    <li>Order placed (#12345)</li>
+                    <li>Comment posted on blog</li>
+                </ul>
+            </div>
+            <div class="bg-gray-200 rounded-lg shadow-md p-4">
+                <h3 class="text-lg font-bold mb-2">Performance Chart</h3>
+                <canvas id="myChart"></canvas> </div>
+        </div>
+    </div>
+
+    <div class="w-48 bg-gray-200 text-gray-700 px-4 py-6 flex flex-col justify-between">
+        <h3 class="text-lg font-bold mb-4">Notifications</h3>
+        <ul class="space-y-2">
+            <li>You have 3 new messages.</li>
+            <li>A new update is available.</li>
+        </ul>
+        <div class="flex items-center mt-auto">
+            <i class="fas fa-cog text-xl mr-2"></i>
+            <p class="text-sm"><a href="/">Log Out</a></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

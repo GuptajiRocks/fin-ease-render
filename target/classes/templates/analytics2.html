@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Analytics</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/framer-motion@latest/dist/framer-motion.min.js"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+<div class="flex min-h-screen">
+  <div class="w-64 bg-indigo-600 text-white px-4 py-6 flex flex-col justify-between">
+    <a href="#" class="text-xl font-bold mb-6">Finance Hub</a>
+    <ul class="space-y-2">
+      <li><a href="/dashboard/main" class="hover:text-indigo-700">Overview</a></li>
+      <li><a href="/dashboard/analytics" class="hover:text-indigo-700 active">Analytics</a></li>
+      <li><a href="/dashboard/analytics2" class="hover:text-indigo-700">Portfolio</a></li>
+      <li><a href="/news" class="hover:text-indigo-700">News</a></li>
+    </ul>
+  </div>
+
+  <div class="flex-grow bg-white p-6 overflow-auto">
+    <h2 class="text-2xl font-bold mb-4">Financial Performance Analysis</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <MotionCard>
+        <h3 class="text-lg font-bold mb-2">Net Worth</h3>
+        <p class="text-xl font-semibold text-green-500">+$12,543.00</p>
+        <p class="text-gray-500">(+5.2% last month)</p>
+      </MotionCard>
+      <MotionCard>
+        <h3 class="text-lg font-bold mb-2">Cash Flow</h3>
+        <p class="text-xl font-semibold text-blue-500">+$850.00</p>
+        <p class="text-gray-500">(Income: $1,200, Expenses: $350)</p>
+      </MotionCard>
+    </div>
+    <div class="mt-8">
+      <h3 class="text-lg font-bold mb-2">Investment Breakdown</h3>
+      <MotionChart>
+        <p>Chart Placeholder</p>
+      </MotionChart>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

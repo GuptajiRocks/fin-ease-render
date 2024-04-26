@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Analytics</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+<div class="flex min-h-screen">
+    <div class="w-64 bg-indigo-600 text-white px-4 py-6 flex flex-col justify-between">
+        <a href="#" class="text-xl font-bold mb-6">My Analytics</a>
+        <ul class="space-y-2">
+            <li><a href="/dashboard/main" class="hover:text-indigo-700">Overview</a></li>
+            <li><a href="/dashboard/investments" class="hover:text-indigo-700 active">Investments</a></li>
+            <li><a href="/news" class="hover:text-indigo-700">News</a></li>
+            <li><a href="/dashboard/analytics2" class="hover:text-indigo-700">Market Analytics</a></li>
+        </ul>
+    </div>
+
+    <div class="flex-grow bg-white p-6 overflow-auto">
+        <h2 class="text-2xl font-bold mb-4">Portfolio Diversification</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-gray-200 rounded-lg shadow-md p-4">
+                <h3 class="text-lg font-bold mb-2">NSE : National Stock Exchange</h3>
+                <canvas id="trafficSourceChart"></canvas>
+            </div>
+            <div class="bg-gray-200 rounded-lg shadow-md p-4">
+                <h3 class="text-lg font-bold mb-2">User Diversification</h3>
+                <canvas id="deviceChart"></canvas>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
+            <div class="bg-gray-200 rounded-lg shadow-md p-4 flex flex-col items-center">
+                <span class="text-4xl font-bold text-indigo-600">1,254</span>
+                <p class="text-gray-500 mt-2">Total Visitors</p>
+            </div>
+            <div class="bg-gray-200 rounded-lg shadow-md p-4 flex flex-col items-center">
+                <span class="text-4xl font-bold text-green-500">321</span>
+                <p class="text-gray-500 mt-2">New Visitors</p>
+            </div>
+            <div class="bg-gray-200 rounded-lg shadow-md p-4 flex flex-col items-center">
+                <span class="text-4xl font-bold text-orange-500">4.5%</span>
+                <p class="text-gray-500 mt-2">Bounce Rate</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Sample chart configuration (replace with your data)
+    const trafficSourceChart = new Chart(document.getElementById('trafficSourceChart'), {
+        type: 'pie',
+        data: {
+            labels: ['S&P', 'NIFTY', 'Direct', 'Index'],
+            datasets: [{
+                label: 'Traffic Source',
+                data: [40, 30, 20, 10],
+                backgroundColor: ['#f56954', '#007bff', '#ffc107', '#28a745']
+            }]
+        }
+    });
+
+    const deviceChart = new Chart(document.getElementById('deviceChart'), {
+        type: 'pie',
+        data: {
+            labels: ['Steel', 'Telecom', 'IT', 'Manufacturing', 'Pharma'],
+            datasets: [{
+                label: 'Traffic Source',
+                data: [25,25,10,10,30],
+                backgroundColor: ['#f56954', '#007bff', '#ffc107', '#28a745']
+            }]
+        }
+    });
+
+</script>

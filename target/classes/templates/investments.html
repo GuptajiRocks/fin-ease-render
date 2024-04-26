@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAPL - Apple Inc.</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+<div class="flex flex-col min-h-screen">
+    <div class="bg-white shadow-md p-4 flex items-center justify-between">
+        <h1 class="text-xl font-bold">AAPL - Apple Inc.</h1>
+        <div class="flex items-center space-x-2">
+            <span class="text-green-500 font-bold">+5.23%</span>
+            <span class="text-gray-500">($178.34)</span>
+        </div>
+    </div>
+
+    <div class="flex flex-grow overflow-auto px-4 pb-4">
+        <div class="w-full md:w-1/2 px-4">
+            <h3 class="text-lg font-bold mb-2">Price Chart (1 Day)</h3>
+            <canvas id="priceChart"></canvas>
+        </div>
+        <div class="w-full md:w-1/2 px-4">
+            <h3 class="text-lg font-bold mb-2">Stock Information</h3>
+            <ul class="list-disc space-y-2">
+                <li>Market Cap: $3.2 Trillion</li>
+                <li>P/E Ratio: 28.54</li>
+                <li>52 Week Range: $134.79 - $189.50</li>
+                <li>Dividend Yield: 0.69%</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bg-white shadow-md p-4 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <button class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-700">Buy</button>
+            <button class="px-4 py-2 bg-gray-200 text-gray-500 rounded-md hover:bg-gray-300">Sell</button>
+        </div>
+        <div class="text-sm text-gray-500">Investing involves risk. Do your research.</div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Sample chart configuration (replace with your data)
+    const priceChart = new Chart(document.getElementById('priceChart'), {
+        type: 'line',
+        data: {
+            labels: ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'],
+            datasets: [{
+                label: 'AAPL Price',
+                data: [175.23, 176.10, 177.54, 178.34, 177.89, 178.12, 179.00],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                pointRadius: 3,
+                pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+                pointBorderColor: 'rgba(54, 162, 235, 1)',
+                pointHoverRadius: 5,
+            }]
+        }
+    });
+</script>
+</body>
+</html>
